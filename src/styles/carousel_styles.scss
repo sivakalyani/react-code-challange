@@ -18,7 +18,7 @@ ul {
 .carousel {
   position: relative;
   background-color: gray;
-  min-height: 300px;
+  min-height: 400px;
 }
 
 // Carousel slides
@@ -131,4 +131,11 @@ ul {
       opacity: .75;
     }
   }
+}
+.btn-custom {
+  background-color: black;
+  color: green;
+  border: 2px solid green;
+  padding: 5px 10px;
+  border-radius: 3px;
 }

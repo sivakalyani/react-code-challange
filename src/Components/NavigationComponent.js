@@ -1,55 +1,42 @@
 import React from "react";
-import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse, FormInline, Dropdown, DropdownToggle, DropdownMenu,  DropdownItem } from "mdbreact";
+import {Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl, Button} from 'react-bootstrap';
+import '../styles/carousel_styles.scss';
 
-class NavbarPage extends React.Component {
-    constructor(props) {
-        super(props);
-    this.state = {
-    isOpen: false
-  };
-}
 
+
+class ApplicationTest extends React.Component {
   render() {
-    return (
-
-      <Navbar color="indigo" dark expand="md">
-          <NavbarBrand>
-            <strong className="white-text">Navbar</strong>
-          </NavbarBrand>
-          <Collapse
-            id="navbarCollapse3"
-            isOpen={this.state.isOpen}
-            navbar
-          >
-            <NavbarNav left>
-              <NavItem active>
-                <NavLink to="#!">Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="#!">Features</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="#!">Pricing</NavLink>
-              </NavItem>
-            </NavbarNav>
-            <NavbarNav right>
-              <NavItem>
-                <FormInline waves>
-                  <div className="md-form my-0">
-                    <input
-                      className="form-control mr-sm-2"
-                      type="text"
-                      placeholder="Search"
-                      aria-label="Search"
-                    />
-                  </div>
-                </FormInline>
-              </NavItem>
-            </NavbarNav>
-          </Collapse>
-      </Navbar>
-    );
+    return(<Navbar inverse collapseOnSelect>
+      <Navbar.Header>
+        <Navbar.Brand>
+          <a href="#brand">Carousel</a>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+      </Navbar.Header>
+      <Navbar.Collapse>
+        <Nav>
+          <NavItem eventKey={1} href="#">
+            Home
+          </NavItem>
+          <NavItem eventKey={2} href="#">
+            Link
+          </NavItem>
+          <NavItem eventKey={2} href="#">
+            Disabled
+          </NavItem>
+        </Nav>
+  <Navbar.Collapse>
+    <Navbar.Form pullRight>
+      <FormGroup>
+        <FormControl type="text" placeholder="Search" />
+      </FormGroup>{' '}
+      <Button type="submit" className="btn-custom">Search</Button>
+    </Navbar.Form>
+  </Navbar.Collapse>
+      </Navbar.Collapse>
+    </Navbar>);
   }
 }
 
-export default NavbarPage;
+
+export default ApplicationTest;

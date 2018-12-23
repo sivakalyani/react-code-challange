@@ -1,7 +1,6 @@
 import React,  { Component } from 'react';
 import classnames from 'classnames';
-import NavigationBar from './NavigationComponent.js';
-import '../styles/carousel_styles.scss';
+import {Button} from 'react-bootstrap';
 
 const carouselSlidesData = [
     {
@@ -78,6 +77,7 @@ const carouselSlidesData = [
         {this.props.slide.headline}</h1>
         <p className="carousel-slide__content">
         {this.props.slide.content}</p>
+        <p className="carousel-slide__content"><Button type="submit" bsStyle="primary">Sign up today</Button></p>
         </li>
       );
     }
@@ -142,10 +142,6 @@ const carouselSlidesData = [
     render() {
         return (
           <div>
-
-          <div className="carousel">
-          <NavigationBar></NavigationBar>
-
           <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
 
         <ul className="carousel__slides">
@@ -173,7 +169,6 @@ const carouselSlidesData = [
             />
           )}
         </ul>
-      </div>
       </div>
         );
       }
