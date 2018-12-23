@@ -2,8 +2,6 @@ import React from "react";
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl, Button} from 'react-bootstrap';
 import '../styles/carousel_styles.scss';
 
-
-
 class ApplicationTest extends React.Component {
   render() {
     return(<Navbar inverse collapseOnSelect>

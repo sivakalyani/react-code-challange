@@ -7,7 +7,9 @@ import '../styles/carousel_styles.scss';
 const Header = (props) => {
     return (
         <div className="carousel">
-        <NavigationBar></NavigationBar><CarouselComponenet></CarouselComponenet></div>
+        <NavigationBar></NavigationBar>
+        <CarouselComponenet></CarouselComponenet>
+        </div>
     )
 }
 
