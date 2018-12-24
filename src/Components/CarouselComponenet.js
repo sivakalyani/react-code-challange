@@ -12,13 +12,11 @@ const carouselSlidesData = [
       content:
         "Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online. The school says Maloney won’t officiate any more sporting events and state authorities are investigating what happened.",
       headline: "Breaking news headlines",
-      source: "facebook"
     },
     {
       content:
         "Partial government shutdown to continue through next week The Senate adjourned Saturday without movement on a deal to end the impasse, with its next scheduled session set for Thursday, Dec. 27.",
       headline: "Breaking news headlines",
-      source: "facebook"
     }
   ];
   class CarouselLeftArrow extends Component {
