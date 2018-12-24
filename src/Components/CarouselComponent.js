@@ -1,6 +1,7 @@
 import React,  { Component } from 'react';
 import classnames from 'classnames';
 import {Button} from 'react-bootstrap';
+import CarouselSlide from './CarouselSlideComponent.js'
 
 const carouselSlidesData = [
     {
@@ -10,7 +11,7 @@ const carouselSlidesData = [
     },
     {
       content:
-        "Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online. The school says Maloney won’t officiate any more sporting events and state authorities are investigating what happened.",
+        "Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online.",
       headline: "Breaking news headlines",
     },
     {
@@ -57,25 +58,6 @@ const carouselSlidesData = [
             }
             onClick={this.props.onClick}
           />
-        </li>
-      );
-    }
-  }
-  class CarouselSlide extends Component {
-    render() {
-      return (
-        <li
-          className={
-            this.props.index == this.props.activeIndex
-              ? "carousel__slide carousel__slide--active"
-              : "carousel__slide"
-          }
-        >
-        <h1 className="carousel-slide__heading">
-        {this.props.slide.headline}</h1>
-        <p className="carousel-slide__content">
-        {this.props.slide.content}</p>
-        <p className="carousel-slide__content"><Button type="submit" bsStyle="primary">Sign up today</Button></p>
         </li>
       );
     }

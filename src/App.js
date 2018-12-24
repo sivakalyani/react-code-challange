@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-import Header from './Components/HeaderComponent.js';
+import Headlines from './Components/HeadlinesComponent.js';
 
 import './App.scss';
 
@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <Router>
       <div>
-        <Route exact path="/" component={Header}/>
+        <Route exact path="/" component={Headlines}/>
       </div>
     </Router>
     );
