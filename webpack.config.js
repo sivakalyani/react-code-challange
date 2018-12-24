@@ -18,7 +18,13 @@ module.exports = {
         }, {
             loader: "sass-loader"
         }]
-    }
+    },
+    {
+             test: /\.(png|svg|jpg|gif)$/,
+               use: [
+                 'file-loader'
+               ]
+            }
     ]
   },
   resolve: {
@@ -42,8 +48,6 @@ module.exports = {
         port: 8080,
         host: '0.0.0.0',
         allowedHosts: [
-            '.oribar.com',
-            'oribar.com',
             'localhost',
             '0.0.0.0'
         ]

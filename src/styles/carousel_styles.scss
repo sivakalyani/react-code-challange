@@ -159,8 +159,21 @@ margin-right: auto}
   display: flex;
   flex-direction: row;
 }
-.shape-squire{
-    width: 500;
-    height: 500; 
-    background-color: lightgrey;
+.row-layout{
+  padding:50px;
+  border-bottom: 1px lightgrey solid;
+}
+.block-example {
+  width: 300px;
+  height: 300px;
+  background-color: #eee;
+  display: inline-block;
+  text-align:center;
+}
+
+.btn-color{
+  background-color: gray;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
 }

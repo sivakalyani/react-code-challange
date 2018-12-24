@@ -1,12 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import { Container, Row, Col } from 'react-grid-system';
-import { Button, Thumbnail } from 'react-bootstrap';
-
-
-
+import { Button, Table, Image } from 'react-bootstrap';
+import ImageHolder from '../assets/image_place_holder.png';
 import { Rectangle, Circle, Ellipse, Line, Polyline, CornerBox, Triangle } from 'react-shapes';
-
 import '../styles/carousel_styles.scss';
+
 const carouselSlidesData = [
     {
         content:
@@ -27,8 +25,58 @@ const carouselSlidesData = [
         index:3
     }
 ];
+class HeadlineDetail extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isMobile: false //This is where I am having problems
+        };
+    
+        this.updatePredicate = this.updatePredicate.bind(this);
+      }
+      componentDidMount() {
+        this.updatePredicate();
+        window.addEventListener("resize", this.updatePredicate);
+      }
+    
+      componentWillUnmount() {
+        window.removeEventListener("resize", this.updatePredicate);
+      }
+    
+      updatePredicate() {
+        this.setState({ isMobile: window.innerWidth <= 500 });
+      }
+    render() {      
+        if (this.state.isMobile || this.props.isTextDisplayFirst) {
+          return (
+           
+            <Row align="center" className="row-layout">
+            <Col sm={7} align="right">
+            <p>Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online. The school says Maloney won’t officiate any more sporting events and state authorities are investigating what happened.</p>
+            </Col> 
+            <Col align="center">
+            <Image src={ImageHolder} responsive />
+            </Col> 
+           </Row>
+          );
+        } else {
+          return (
+              
+            <Row align="center" className="row-layout">
+            <Col align="center">
+            <Image src={ImageHolder} responsive />
+            </Col>
+            <Col sm={7} align="right">
+            <p>Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online. The school says Maloney won’t officiate any more sporting events and state authorities are investigating what happened.</p>
+            </Col>  
+           </Row>
+           
+          );
+        }
+      }
+  }
 
-class HeadlineDetails extends React.Component {
+class HeadlineDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,11 +85,11 @@ class HeadlineDetails extends React.Component {
     }
     render() {
         return (
-            
+            <div>
             <Container>
-                <Row>
+                <Row className="row-layout">
                         <ul>
-                            <Row>
+                            <Row border="1px">
                                 {this.state.slides.map((slide, index) =>
                                     <Col sm={4} key={slide.index}>
                                         <Row align="center">
@@ -56,7 +104,7 @@ class HeadlineDetails extends React.Component {
                                                     {slide.content}
                                                 </p>
                                                 <p>
-                                                <Button type="submit">View Details</Button>
+                                                <Button type="submit" className="btn-color">View Details >></Button>
                                                 </p>
                                             </Col>
                                         </Row>
@@ -67,38 +115,20 @@ class HeadlineDetails extends React.Component {
                         <div>
                         </div>
                 </Row>
-                <br/>
-                <Row align="center">
-                    <Col sm={8} align="center">
-                    <p>Economists say Trump's criticism of Powell misrepresents Fed's role, influence Trump’s complaints about the Federal Reserve head indicate a flawed understanding of how the economy works, say experts. </p>
+                <HeadlineDetail isTextDisplayFirst={true}></HeadlineDetail>
+                <HeadlineDetail isTextDisplayFirst={false}></HeadlineDetail>
+                <HeadlineDetail isTextDisplayFirst={true}></HeadlineDetail>
+              <Row align="center" className="row-layout">
+              <Col sm={6} align="left">
+                    <p>@ 2017-2018 Company, Inc. <a href="#">Privacy-Terms</a></p>
                     </Col>
                     <Col align="right">
-                    <Rectangle width={300} height={300} fill={{color:'gray'}} text="500x500"><p className="shape-squire">text</p></Rectangle>
+                    <a href="#">Back to top</a>
                     </Col>
-                </Row>
-                <br/>
-
-                <Row align="center">
-                <Col align="right">
-                    <Rectangle width={300} height={300} fill={{color:'gray'}} />
-                </Col>
-                <Col sm={8} align="center">
-                 <p>Economists say Trump's criticism of Powell misrepresents Fed's role, influence Trump’s complaints about the Federal Reserve head indicate a flawed understanding of how the economy works, say experts. </p>
-                </Col>
-                </Row>
-                <Row align="center">
-                    <Col sm={8} align="center">
-                    <p>Economists say Trump's criticism of Powell misrepresents Fed's role, influence Trump’s complaints about the Federal Reserve head indicate a flawed understanding of how the economy works, say experts. </p>
-                    </Col>
-                    <Col>
-                    <Rectangle width={300} height={300} fill={{color:'gray'}} />
-                    </Col>
-                </Row>
-
+              </Row>
             </Container>
+            </div>
         );
     }
 }
-
-
 export default HeadlineDetails;
