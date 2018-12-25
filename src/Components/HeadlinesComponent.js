@@ -5,16 +5,16 @@ import '../styles/headline_styles.scss';
 
 
 const HeadLines = (props) => {
-    return (
-        <div>
-        <div className="carousel">
+  return (
+    <div>
+      <div className="carousel">
         <Header/>
-        </div>
-        <div className="container-style">
+      </div>
+      <div className="container-style">
         <HeadlineDetails></HeadlineDetails>
-        </div>
-        </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
 export default HeadLines;

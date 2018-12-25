@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
 import Headlines from './Components/HeadlinesComponent.js';
 import './App.scss';
-import './styles/headline_styles.scss';
+
 
 class App extends Component {
   render() {
     return (
       <Router>
-      <div>
-        <Route exact path="/" component={Headlines}/>
-      </div>
-    </Router>
+        <div>
+          <Route exact path="/" component={Headlines}/>
+        </div>
+      </Router>
     );
   }
 }
