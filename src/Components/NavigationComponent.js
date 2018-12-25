@@ -1,39 +1,60 @@
 import React from "react";
-import {Navbar, Nav, NavItem, FormGroup, FormControl, Button} from 'react-bootstrap';
+import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse, FormInline, Dropdown, DropdownToggle, DropdownMenu,  DropdownItem, Fa } from "mdbreact";
 
-class ApplicationTest extends React.Component {
+class NavbarPage extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.toggleCollapse = this.toggleCollapse.bind(this);
+
+    this.state = {
+      isOpen: false
+
+    };
+  }
+
+  toggleCollapse() {
+    this.setState({ isOpen: !this.state.isOpen });
+  }
+
   render() {
-    return(<Navbar inverse collapseOnSelect>
-      <Navbar.Header>
-        <Navbar.Brand>
-          <a href="#brand">Carousel</a>
-        </Navbar.Brand>
-        <Navbar.Toggle />
-      </Navbar.Header>
-      <Navbar.Collapse>
-        <Nav>
-          <NavItem eventKey={1} href="#">
-            Home
-          </NavItem>
-          <NavItem eventKey={2} href="#">
-            Link
-          </NavItem>
-          <NavItem eventKey={2} href="#">
-            Disabled
-          </NavItem>
-        </Nav>
-  <Navbar.Collapse>
-    <Navbar.Form pullRight>
-      <FormGroup>
-        <FormControl type="text" placeholder="Search" />
-      </FormGroup>{' '}
-      <Button type="submit" className="btn-custom">Search</Button>
-    </Navbar.Form>
-  </Navbar.Collapse>
-      </Navbar.Collapse>
-    </Navbar>);
+    return (
+      <Navbar dark expand="md" className="navbar-color">
+          <NavbarBrand>
+            <strong className="white-text">Carousel</strong>
+          </NavbarBrand>
+          <NavbarToggler
+            onClick={this.toggleCollapse}
+          />
+          <Collapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+            <NavbarNav left>
+              <NavItem>
+                <NavLink to="#!"><strong className="white-text">Home</strong></NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="#!">Link</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="#!" className="disabled">Disabled</NavLink>
+              </NavItem>
+            </NavbarNav>
+            <NavbarNav right>
+              <NavItem>
+              <FormInline>
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="Search"
+                      aria-label="Search"
+                    />
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </FormInline>
+              </NavItem>
+            </NavbarNav>
+          </Collapse>
+      </Navbar>
+    );
   }
 }
 
-
-export default ApplicationTest;
+export default NavbarPage;

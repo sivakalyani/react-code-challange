@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from 'react-grid-system';
-import { Button, Table, Image } from 'react-bootstrap';
+import {MDBRow, MDBCol } from "mdbreact";
 import ImageHolder from '../assets/image_place_holder.png';
-import { Rectangle, Circle, Ellipse, Line, Polyline, CornerBox, Triangle } from 'react-shapes';
+import {Circle } from 'react-shapes';
 class HeadlineDetail extends Component {
     constructor(props) {
         super(props);
@@ -28,27 +27,27 @@ class HeadlineDetail extends Component {
         if (this.state.isMobile || this.props.isTextDisplayFirst) {
           return (
            
-            <Row align="center" className="row-layout">
-            <Col sm={7} align="right">
-            <p>Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online. The school says Maloney won’t officiate any more sporting events and state authorities are investigating what happened.</p>
-            </Col> 
-            <Col align="center">
-            <Image src={ImageHolder} responsive />
-            </Col> 
-           </Row>
+            <MDBRow align="center" className="row-layout">
+            <MDBCol md="8" align="center" >
+            <h2 className="h2-responsive">First feature heading.It will blow your mind </h2>
+            <p className="lead">Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online. The school says Maloney won’t officiate any more sporting events and state authorities are investigating what happened.</p>
+            </MDBCol> 
+            <MDBCol md="4" align="right">
+            <img src={ImageHolder} className="img-fluid" alt="aligment" />
+            </MDBCol> 
+           </MDBRow>
           );
         } else {
           return (
-              
-            <Row align="center" className="row-layout">
-            <Col align="center">
-            <Image src={ImageHolder} responsive />
-            </Col>
-            <Col sm={7} align="right">
-            <p>Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online. The school says Maloney won’t officiate any more sporting events and state authorities are investigating what happened.</p>
-            </Col>  
-           </Row>
-           
+            <MDBRow align="center" className="row-layout">
+            <MDBCol md="4" align="center">
+            <img src={ImageHolder} className="img-fluid" alt="aligment" />
+            </MDBCol>
+            <MDBCol md="8" align="right"> 
+            <h2 className="h2-responsive">First feature heading.It will blow your mind </h2>
+            <p className="lead">Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online. The school says Maloney won’t officiate any more sporting events and state authorities are investigating what happened.</p>
+            </MDBCol> 
+           </MDBRow> 
           );
         }
       }

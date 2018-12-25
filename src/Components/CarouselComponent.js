@@ -1,23 +1,27 @@
 import React,  { Component } from 'react';
+import { Carousel, CarouselCaption, CarouselInner, CarouselItem, View, Mask } from "mdbreact";
+
 import classnames from 'classnames';
-import {Button} from 'react-bootstrap';
-import CarouselSlide from './CarouselSlideComponent.js'
+import CarouselSlide from './CarouselSlideComponent.js';
 
 const carouselSlidesData = [
     {
       content:
         "Economists say Trump's criticism of Powell misrepresents Fed's role, influence Trump’s complaints about the Federal Reserve head indicate a flawed understanding of how the economy works, say experts. ",
       headline: "Breaking news headlines",
+      id:0
     },
     {
       content:
         "Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online.",
       headline: "Breaking news headlines",
+      id:1
     },
     {
       content:
         "Partial government shutdown to continue through next week The Senate adjourned Saturday without movement on a deal to end the impasse, with its next scheduled session set for Thursday, Dec. 27.",
       headline: "Breaking news headlines",
+      id:2
     }
   ];
   class CarouselLeftArrow extends Component {
@@ -63,7 +67,7 @@ const carouselSlidesData = [
     }
   }
   
-  class Carousel extends Component { 
+  class CarouselCustom extends Component { 
     constructor(props) {
       super(props);
       this.goToSlide = this.goToSlide.bind(this);
@@ -122,8 +126,9 @@ const carouselSlidesData = [
     render() {
         return (
           <div>
-          <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
-
+        <Carousel activeItem={this.state.activeIndex} length={this.state.slides.length-1} showControls={false} showIndicators={false} >
+        <CarouselInner className="carousel-item active">
+        <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
         <ul className="carousel__slides">
           {this.state.slides.map((slide, index) =>
             <CarouselSlide
@@ -135,10 +140,7 @@ const carouselSlidesData = [
           )}
 
         </ul>
-        
-
         <CarouselRightArrow onClick={e => this.goToNextSlide(e)} />
-
         <ul className="carousel__indicators">
           {this.state.slides.map((slide, index) =>
             <CarouselIndicator
@@ -149,8 +151,10 @@ const carouselSlidesData = [
             />
           )}
         </ul>
+        </CarouselInner>
+        </Carousel>
       </div>
         );
       }
 }
-  export default Carousel;
+  export default CarouselCustom;

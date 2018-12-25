@@ -1,6 +1,6 @@
 import React,  { Component } from 'react';
 import classnames from 'classnames';
-import {Button} from 'react-bootstrap';
+import { MDBBtn } from "mdbreact";
 class CarouselSlide extends Component {
     render() {
       return (
@@ -15,7 +15,8 @@ class CarouselSlide extends Component {
         {this.props.slide.headline}</h1>
         <p className="carousel-slide__content">
         {this.props.slide.content}</p>
-        <p className="carousel-slide__content"><Button type="submit" bsStyle="primary">Sign up today</Button></p>
+        <p className="carousel-slide__content">
+         <MDBBtn href="#" color="primary" size="lg">Sign up today</MDBBtn></p>
         </li>
       );
     }

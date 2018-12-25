@@ -4,10 +4,8 @@ import {
   Route,
 } from 'react-router-dom';
 import Headlines from './Components/HeadlinesComponent.js';
-
 import './App.scss';
-
-
+import './styles/headline_styles.scss';
 
 class App extends Component {
   render() {

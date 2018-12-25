@@ -18,7 +18,7 @@ ul {
 .carousel {
   position: relative;
   background-color: gray;
-  min-height: 30em;
+  min-height: 300px;
 }
 
 // Carousel slides
@@ -62,7 +62,7 @@ ul {
   @media (max-width: $breakpoint-desktop - 1px) {
     font-size: 18px;
   }
-  padding-top: 4em;
+  padding-top: 40px;
 
 }
 
@@ -179,7 +179,4 @@ margin-right: auto}
 }
 .nav-link-disabled {
   color: rgba(255,255,255,.25);
-}
-.navbar-color{
-  background-color:#343a40;
 }
