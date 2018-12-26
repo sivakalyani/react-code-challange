@@ -25,15 +25,15 @@ ul {
 // Carousel slides
 .carousel__slide {
   margin-right: auto;
-  margin-left: 10%;
+  margin-left: 15%;
   display: none;
   max-width: 56.3rem;
   list-style-type: none;
   text-align: center;
 
   @media (max-width: 62rem) {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
   }
 
   &--active {
@@ -43,8 +43,8 @@ ul {
 
 // Content of slides
 .carousel-slide__content {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   font-family: 'Open Sans', 'Trebuchet MS', sans-serif;
   font-size: 1rem;
   text-align: left;
@@ -54,7 +54,6 @@ ul {
   }
 
 }
-
 
 .carousel-slide__heading {
   margin-bottom: 1rem;
@@ -68,16 +67,16 @@ ul {
 
 }
 
-
-
 // Carousel arrows
 .carousel__arrow {
   position: absolute;
   top: 40%;
+  height: 1.5rem;
+  width: 1.5rem;
   display: block;
   color: #111;
   cursor: pointer;
-  opacity: .75;
+  opacity: .5;
   transform: translateY(-50%);
   transition: opacity .15s cubic-bezier(.4, 0, 1, 1);
 
@@ -90,11 +89,11 @@ ul {
   }
 
   &--left {
-    left: 3rem;
+    left: 4rem;
   }
 
   &--right {
-    right: 3rem;
+    right: 4rem;
   }
 }
 
@@ -154,14 +153,6 @@ margin-right: auto}
   padding:3.2rem;
   border-bottom: 0.07rem lightgrey solid;
 }
-.block-example {
-  width: 19rem;
-  height: 19rem;
-  background-color: #eee;
-  display: inline-block;
-  text-align:center;
-}
-
 .btn-color{
   background-color: grey;
   color: white;
