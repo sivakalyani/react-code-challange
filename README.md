@@ -4,6 +4,7 @@
 
 * React 16
 * Babel 7
+* mdbreact
 
 ## Installation
 
