@@ -30,7 +30,7 @@ class CarouselLeftArrow extends Component {
         className="carousel__arrow carousel__arrow--left"
         onClick={this.props.onClick}
       >
-        <span className="fa fa-3x fa-angle-left" />
+        <span className="fa fa-3x fa-angle-left arrow-color" />
       </a>
     );
   }
@@ -43,7 +43,7 @@ class CarouselRightArrow extends Component {
         className="carousel__arrow carousel__arrow--right"
         onClick={this.props.onClick}
       >
-        <span className="fa fa-3x fa-angle-right" />
+        <i className="fa fa-3x fa-angle-right arrow-color" />
       </a>
     );
   }

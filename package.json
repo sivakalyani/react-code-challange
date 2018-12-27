@@ -1,5 +1,5 @@
 {
-  "name": "test-mb",
+  "name": "react-code-challange",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,9 +12,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
-  },
+    "build": "react-scripts build"
+    },
   "eslintConfig": {
     "extends": "react-app"
   },

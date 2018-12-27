@@ -28,11 +28,11 @@ class HeadlineDetail extends Component {
       return (
 
         <MDBRow align="center" className="row-layout">
-          <MDBCol md="8" align="center" >
-            <h2 className="h2-responsive">First feature heading.It will blow your mind </h2>
+          <MDBCol md="6" className="col-layout" align="left" >
+            <h2 className="h2-responsive test">First feature heading.It will blow your mind </h2>
             <p className="lead">Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online. The school says Maloney won’t officiate any more sporting events and state authorities are investigating what happened.</p>
           </MDBCol>
-          <MDBCol md="4" align="right">
+          <MDBCol md="6" align="right">
             <img src={ImageHolder} className="img-fluid" alt="aligment" />
           </MDBCol>
         </MDBRow>
@@ -40,10 +40,10 @@ class HeadlineDetail extends Component {
     } else {
       return (
         <MDBRow align="center" className="row-layout">
-          <MDBCol md="4" align="center">
+          <MDBCol md="6" align="left">
             <img src={ImageHolder} className="img-fluid" alt="aligment" />
           </MDBCol>
-          <MDBCol md="8" align="right">
+          <MDBCol md="6" className="col-layout" align="right">
             <h2 className="h2-responsive">First feature heading.It will blow your mind </h2>
             <p className="lead">Referee Alan Maloney ordered New Jersey high school wrestler Andrew Johnson to cut off his dreadlocks or forfeit a match, prompting outrage as a video of the incident circulated online. The school says Maloney won’t officiate any more sporting events and state authorities are investigating what happened.</p>
           </MDBCol>

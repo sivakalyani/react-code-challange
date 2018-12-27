@@ -67,7 +67,7 @@ class HeadlineBody extends Component {
           <HeadlineDetail isTextDisplayFirst={false}></HeadlineDetail>
           <HeadlineDetail isTextDisplayFirst={true}></HeadlineDetail>
           <MDBRow align="center" className="row-layout">
-            <MDBCol md="6" align="left">
+            <MDBCol md="6" >
               <p>@ 2017-2018 Company, Inc. <a href="#">Privacy-Terms</a></p>
             </MDBCol>
             <MDBCol align="right">

@@ -4,7 +4,6 @@ import {
   Route,
 } from 'react-router-dom';
 import Headlines from './Components/HeadlinesComponent.js';
-import './App.scss';
 
 
 class App extends Component {
